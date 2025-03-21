@@ -4,21 +4,24 @@ class Notes {
 
 		int[] testArray = {5, 9, 1, 2, 3, 5, 7, 8, 2, 3, 14, 356, 25, 8, 26, 8, 3, 5};
 
-
 		for (int i = 0; i < testArray.length - 1; i++) {
 			int smallestIndex = i;
 			for (int j = i + 1; j < testArray.length; j++) {
-				if (testArray[smallestIndex] > testArray[j]) {
+				if (testArray[j] < testArray[smallestIndex]) {
 					smallestIndex = j;
 				}
 			}
-			//we have smallest element
 			//swap
-			int temp = testArray[smallestIndex];
-			testArray[smallestIndex] = testArray[i];
-			testArray[i] = temp;
+			int temp = testArray[i];
+			testArray[i] = testArray[smallestIndex];
+			testArray[smallestIndex] = temp;
 		}
-		
+
+
+
+
+
+
 
 		for (int i = 0; i < testArray.length; i++) {
 			System.out.print(testArray[i] + " ");
